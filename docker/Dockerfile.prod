@@ -24,10 +24,10 @@ ENV PYTHONUNBUFFERED 1
 
 
 # upgrade pip and install dependencies
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
 COPY ./requirements/base.txt /usr/src/app/
 COPY ./requirements/prod.txt /usr/src/app/
-RUN pip install -r /usr/src/app/prod.txt
+RUN pip install --no-cache-dir -r /usr/src/app/prod.txt
 
 # copy entrypoint-prod.sh
 COPY ./docker/entrypoint.prod.sh /usr/src/app/entrypoint.prod.sh
