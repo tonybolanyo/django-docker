@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t django-deploy-box 
+docker build -f ./docker/Dockerfile.prod -t django-docker-box .
